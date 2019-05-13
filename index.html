@@ -46,7 +46,78 @@ height:100%;
  
  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-route.min.js"></script><!--
+ <script src="assets/angularjs/js/angular-animate.min.js"></script><!DOCTYPE html>
+<html ng-app="amaApp" ng-controller="amaCtrl" >
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>AngularJS</title>
+
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.css" /><style type="text/css">
+.navbar-brand{
+height:60px;
+}
+.navbar-brand img{
+height:100%;
+}
+</style>
+</head>
+<body>
+
+<div ng-include="'templates/structure/header.html'" ></div>
+
+<h1>Main content here</h1><br><br>
+
+
+
+<div ng-view  ></div>
+
+
+
+
+<div ng-include="'templates/structure/footer.html'" ></div>
+ 
+ <!-- JQuery -->
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+ <!-- Bootstrap tooltips -->
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+ <!-- Bootstrap core JavaScript -->
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+ <!-- MDB core JavaScript -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
+ 
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-route.min.js"></script><!--
  <script src="assets/angularjs/js/angular-animate.min.js"></script>
+ <script src="assets/angularjs/js/angular-touch.min.js"></script>
+ <script src=""></script>-->
+ <script type="text/javascript">
+ var app = angular.module('amaApp', ['ngRoute']);
+ app.config(['$routeProvider', function($routeProvider){
+ 
+ 
+ $routeProvider
+ // Home
+ .when("/", {templateUrl: "templates/contents/home.html", controller: "amaCtrl"})
+ // Home
+ .when("/about", {templateUrl: "templates/contents/about.html", controller: "amaCtrl"})
+ // Home
+ .when("/contact", {templateUrl: "templates/contents/contact.html", controller: "amaCtrl"})
+ // else 404
+ .otherwise( {templateUrl: "templates/contents/404.html", controller: "amaCtrl"});
+ 
+ }]);
+ app.controller('amaCtrl', function($scope){
+ 
+ 
+ })
+ </script>
+</body>
+</html>
  <script src="assets/angularjs/js/angular-touch.min.js"></script>
  <script src=""></script>-->
  
